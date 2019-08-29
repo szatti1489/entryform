@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::resource('/', 'HomeController');
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
