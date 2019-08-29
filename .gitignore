@@ -1,0 +1,9 @@
+.idea/
+bootstrap/
+node_modules/
+storage/
+tests/
+vendor/
+
+artisan
+server.php
