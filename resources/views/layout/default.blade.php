@@ -4,5 +4,5 @@
         @yield('content')
     </div>
 
-    <footer id="footer"></footer>
+    <footer id="footer">Attila Szabo - szatti1489@gmail.com - 36 20 232 1459</footer>
 @stop

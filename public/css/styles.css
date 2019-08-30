@@ -2,7 +2,248 @@
 
 body {
     background-color: #d2e1ff;
+    font: 1.6rem / 1.5 "Montserrat", sans-serif;
+    margin: 0;
+    /*min-height: 100vh;*/
+    font-size: 1.6rem;
+    overflow-y: scroll;
 }
 
-.container {}
+* {
+    box-sizing: border-box;
+    outline: none;
+}
 
+:root {
+    font-size: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    font-size: inherit;
+    margin: 0;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button > span {
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.60);
+}
+
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: black;
+    font-size: inherit;
+}
+
+h2 {
+    margin: 0.5rem;
+}
+
+/* Form */
+.form-wrapper {
+    width: 450px;
+}
+
+.form-wrapper > p {
+    float: left;
+    margin-right: 12px;
+    margin-top: 5px;
+}
+
+.form-wrapper > div {
+    clear: both;
+}
+
+.form-wrapper > button {
+    width: 128px;
+    height: 32px;
+    background: rgb(66,75,180);
+    background: linear-gradient(180deg, rgba(66,75,180,1) 0%, rgba(116,98,209,1) 100%);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+.select-wrapper,
+select,
+textarea,
+input[type="number"],
+input[type="text"] {
+    border: 0;
+    border-radius: 10px;
+    width: 207px;
+    height: 40px;
+    box-shadow: inset 8px 8px 14px -5px rgba(136,136,136,0.75);
+    background: #fff;
+    padding: 10px;
+}
+
+textarea {
+    width: 389px;
+    height: 145px;
+    resize: none;
+}
+
+.select-wrapper {
+    padding: 0;
+    overflow: hidden;
+}
+
+.select-wrapper select {
+    border: 0;
+}
+
+.number-fields > input {
+    width: 48px;
+    margin-right: 5px;
+}
+
+.formstep-3 p {
+    float: initial;
+    position: absolute;
+    bottom: 10px;
+}
+
+.info {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.app {
+    width: 695px;
+    margin: 15% auto;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #666;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(254,196,0);
+    background: linear-gradient(180deg, rgba(254,196,0,1) 0%, rgba(238,163,14,1) 100%);
+    font-family: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    min-height: 57px;
+}
+
+.button-wrapper {
+    background-color: #dedede;
+    border-radius: 10px;
+}
+
+.item--active .button-wrapper {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+.item {
+    padding: 0.5rem;
+}
+
+.item--active .btn {
+    background-color: #f7f7f7;
+}
+
+.collapse {
+    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content {
+    padding: 0;
+    transition: -webkit-transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.content-wrapper {
+    background: #dedede;
+    border-radius: 10px;
+    padding: 15px 10px;
+    margin-top: -10px;
+    position: relative;
+    min-height: 205px;
+}
+
+.content.collapsing {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.content.collapsed {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.content.expanding {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.content.expanded {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.text {
+    margin-bottom: 1rem;
+}
+
+.state {
+    display: inline-block;
+    min-width: 6em;
+}
+
+.image-wrapper {
+    position: relative;
+    max-width: 500px;
+    height: 0;
+    padding-bottom: 40%;
+    margin-bottom: 1rem;
+    background: #eee;
+}
+
+.image-wrapper__img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+}
+
+footer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 80%;
+}
