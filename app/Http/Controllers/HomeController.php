@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	return view('index');
+	    return view('index');
     }
 
     /**
@@ -34,7 +35,10 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request);
+        User::create($request->all());
+
+        return redirect()->route('index')->with('success','User created successfully.');
     }
 
     /**
@@ -56,7 +60,9 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('index', [
+            'user' => User::find($id)
+        ]);
     }
 
     /**
@@ -68,7 +74,11 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->route('index')->with('success','User updated successfully');
     }
 
     /**
@@ -80,5 +90,23 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * @param Request $request
+     * @return array|void
+     */
+    private function validate($request)
+    {
+        $request->validate([
+            'firstanme' => 'required|max:128',
+            'surname'   => 'required|max:128',
+            'birth'     => 'required|date|date_format:Y-m-d',
+            'email'     => 'required|email|max:255',
+            'phone'     => 'required|max:64',
+            'phone'     => 'required',
+            'gender'    => 'required|in:f,m',
+            'comments'  => 'required|max:2048',
+        ]);
     }
 }

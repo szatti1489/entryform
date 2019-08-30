@@ -16,24 +16,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+        'firstname', 'surname', 'email', 'phone', 'birth', 'comments',
     ];
 }
+
+/*CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstname` varchar(128) NOT NULL,
+  `surname` varchar(128) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `birth` date NOT NULL,
+  `comments` varchar(2048) NOT NULL
+  `created_at` timestamp NULL,
+  `updated_at` timestamp NULL
+) ENGINE='InnoDB';*/

@@ -28,7 +28,8 @@
 
                 this.handleChange = this.handleChange.bind(this);
                 this.handleSubmit = this.handleSubmit.bind(this);
-            }
+
+                }
 
             handleChange(event) {
                 this.setState({value: event.target.value});
@@ -48,7 +49,7 @@
                         </p>
 
                         <p>
-                            <label>Enter your age</label>
+                            <label>Surname</label>
                             <input type="text" name="surname" onChange={this.myChangeHandler}/>
                         </p>
 
@@ -57,7 +58,7 @@
                             <input type="text" name="email" onChange={this.myChangeHandler}/>
                         </p>
 
-                        <button type="button" onClick={this.onClickHandler}>Next ></button>
+                        <button type="button" onClick={this.onToggle}>Next ></button>
                         <div></div>
                     </div>
                 );
@@ -87,7 +88,7 @@
                     <div class="form-wrapper">
                         <p>
                             <label>Telephone number</label>
-                            <input type="text" name="firstname" onChange={this.myChangeHandler}/>
+                            <input type="text" name="phone" onChange={this.myChangeHandler}/>
                         </p>
 
                         <p>
@@ -144,7 +145,7 @@
                             <textarea name="comments" onChange={this.myChangeHandler}></textarea>
                         </p>
 
-                        <button type="button" onClick={this.onClickHandler}>Next ></button>
+                        <button type="button" onClick={this.onClickHandler}>Finish</button>
                         <div></div>
                     </div>
                 );
@@ -159,8 +160,6 @@
                         index: 1
                     });
                 _defineProperty(this, "onToggle",
-
-
                     (index) =>
                         this.setState(state => ({index: state.index === index ? null : index})));
             }
